@@ -1,0 +1,35 @@
+{% extends 'nav.html' %}
+{% block content %}
+
+<i><h1 class="text-center text-success m-3">Car Model Datas</h1></i>
+<table class="table" style="width: 50%; margin: auto;">
+    <thead class="table-dark">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Model</th>
+            <th>Price</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in myusers %}
+
+        <tr>
+         <td>{{user.Name}}</td>
+         <td>{{user.Age}}</td>
+         <td>{{user.Phone}}</td> 
+         <td>{{user.Email}}</td>
+         <td>{{user.Model}}</td>
+         <td>{{user.Price}}</td>
+         <td><a class="btn btn-warning" href="update/{{user.id}}">Update</a></td>
+         <td><a class="btn btn-danger" href="delete/{{user.id}}">Delete</a></td>
+       </tr>
+         
+        {% endfor %}
+    </tbody>
+</table><br><br>
+{% endblock %}
