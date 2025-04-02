@@ -1,0 +1,45 @@
+{% extends 'nav.html' %}
+{% block content %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>  
+  <h1 class="bg-success text-center text-white p-3">Welcome to Register Form Page</h1>
+  <form action="{% url 'updaterec' user.id %}" method="post">
+  {% csrf_token %}
+    <div class="container m-5 p-3">
+    
+      Name : <input type="text" name="name" value="{{user.Name}}"/><br><br>              
+      Age : <input  type="number" name="age" value="{{user.Age}}"/><br><br>
+      Phone : <input type="bignumber" name="phone" value="{{user.Phone}}"/><br><br>
+      Email : <input type="email" name="email" value="{{user.Email}}"/><br><br>
+      Car Model : <input type="text" name="model" value="{{user.Model}}"/><br><br>
+      Price : <input type="number" name="price" value="{{user.Price}}"/><br><br>
+       <div class="container mx-5 px-5">
+         <button class="btn btn-success" type="submit">Update</button>
+          <button class="btn btn-danger" type="reset">Reset</button>
+        </div>
+    </div>
+  </form><br><br>
+
+
+  
+</body>
+</html>
+
+
+
+
+
+
+{% endblock %}
+
+
